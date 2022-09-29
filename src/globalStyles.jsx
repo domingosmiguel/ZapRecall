@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
     *{
-        @import url('https://fonts.googleapis.com/css2?family=Recursive&family=Righteous&display=swap');
         box-sizing: border-box;
         --cor-fundo: #fb6b6b;
         --cor-fundo-card: #ffffd4;
