@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
         --cor-quase-nao-lembrei: #ff922e;
         --cor-zap: #2fbe34;
         --preto: #333333;
-        --header-height: 140px;
+        --header-height: 200px;
         --footer-height: 70px;
         --openedCardHeight: 130px;
         --closedCardHeight: 70px;

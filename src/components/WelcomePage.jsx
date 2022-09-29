@@ -26,18 +26,21 @@ const Home = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: 1;
     position: absolute;
     background-color: var(--cor-fundo);
 
     img {
         width: 136px;
         height: 161px;
+        margin-bottom: 20px;
     }
     h1 {
-        font-family: "Righteous", cursive;
-        font-size: 36px;
         color: white;
+        font-family: "Righteous";
+        font-size: 36px;
+        line-height: 45px;
+        letter-spacing: -0.012em;
+        margin-bottom: 32px;
     }
     button {
         width: 246px;
@@ -46,10 +49,17 @@ const Home = styled.div`
         border-radius: 5px;
         color: #d70900;
         border: 1px;
+        font-family: "Recursive";
+        font-style: normal;
+        font-weight: 400;
         font-size: 18px;
+        line-height: 22px;
         cursor: pointer;
+        background: #ffffff;
+        border: 1px solid #d70900;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
     }
     button:hover {
-        background-color: #cea2a0;
+        background-color: #e3bbb9;
     }
 `;

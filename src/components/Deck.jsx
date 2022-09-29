@@ -27,8 +27,8 @@ function Deck() {
 
 export default Deck;
 
-const Table = styled.div`
-    width: min(100vw, 375px);
+const Table = styled.section`
+    width: 100vw;
     height: 100%;
     overflow-y: scroll;
 `;

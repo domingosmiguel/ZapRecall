@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import smallLogo from "../assets/img/logo-pequeno.png";
+import logo from "../assets/img/logo.png";
 
 function Header({ headerShadow }) {
     return (
         <StyledHeader shadow={headerShadow}>
-            <img src={smallLogo} alt="smallLogo" />
+            <img src={logo} alt="logo" />
             <h1>ZapRecall</h1>
         </StyledHeader>
     );
@@ -12,7 +12,7 @@ function Header({ headerShadow }) {
 
 export default Header;
 
-const StyledHeader = styled.div`
+const StyledHeader = styled.section`
     width: 100%;
     height: var(--header-height);
     color: white;
@@ -26,7 +26,7 @@ const StyledHeader = styled.div`
     box-shadow: ${({ shadow }) => (shadow ? "0 5px 5px #33333330" : "")};
     z-index: 2;
 
-    z-index: img {
+    img {
         margin-right: 25px;
         width: 52px;
         height: 60px;
