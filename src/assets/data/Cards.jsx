@@ -1,21 +1,60 @@
-const Cards = [
-    { Question: "O que é JSX?", Answer: "Uma extensão de linguagem do JavaScript" },
-    { Question: "O React é __", Answer: "uma biblioteca JavaScript para construção de interfaces" },
-    { Question: "Componentes devem iniciar com __", Answer: "letra maiúscula" },
-    { Question: "Podemos colocar __ dentro do JSX", Answer: "expressões" },
+const cards = [
     {
-        Question: "O ReactDOM nos ajuda __",
-        Answer: "interagindo com a DOM para colocar componentes React na mesma",
+        id: 0,
+        opened: false,
+        flipped: false,
+        question: "O que é JSX?",
+        answer: "Uma extensão de linguagem do JavaScript",
     },
     {
-        Question: "Usamos o npm para __",
-        Answer: "gerenciar os pacotes necessários e suas dependências",
+        id: 1,
+        opened: false,
+        flipped: false,
+        question: "O React é __",
+        answer: "uma biblioteca JavaScript para construção de interfaces",
     },
-    { Question: "Usamos props para __", Answer: "passar diferentes informações para componentes" },
     {
-        Question: "Usamos estado (state) para __",
-        Answer: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente",
+        id: 2,
+        opened: false,
+        flipped: false,
+        question: "Componentes devem iniciar com __",
+        answer: "letra maiúscula",
+    },
+    {
+        id: 3,
+        opened: false,
+        flipped: false,
+        question: "Podemos colocar __ dentro do JSX",
+        answer: "expressões",
+    },
+    {
+        id: 4,
+        opened: false,
+        flipped: false,
+        question: "O ReactDOM nos ajuda __",
+        answer: "interagindo com a DOM para colocar componentes React na mesma",
+    },
+    {
+        id: 5,
+        opened: false,
+        flipped: false,
+        question: "Usamos o npm para __",
+        answer: "gerenciar os pacotes necessários e suas dependências",
+    },
+    {
+        id: 6,
+        opened: false,
+        flipped: false,
+        question: "Usamos props para __",
+        answer: "passar diferentes informações para componentes",
+    },
+    {
+        id: 7,
+        opened: false,
+        flipped: false,
+        question: "Usamos estado (state) para __",
+        answer: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente",
     },
 ];
 
-export default Cards;
+export default cards;

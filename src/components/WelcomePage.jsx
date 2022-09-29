@@ -7,7 +7,9 @@ function WelcomePage() {
             <img src={logo} alt="logo" />
             <h1>ZapRecall</h1>
             <Link to="/game">
-                <button type="button">Initiate Recall!</button>
+                <button type="button" data-identifier="start-btn">
+                    Initiate Recall!
+                </button>
             </Link>
         </Home>
     );
