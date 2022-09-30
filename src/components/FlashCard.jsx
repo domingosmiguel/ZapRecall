@@ -80,7 +80,8 @@ export default FlashCard;
 
 const CardContainer = styled.li`
     pointer-events: ${({ events }) => events};
-    width: 300px;
+    width: min(85vw, 400px);
+    min-width: 260px;
     height: ${({ height }) => height};
     display: flex;
     justify-content: space-between;
@@ -225,7 +226,7 @@ const CardCover = styled.div`
         animation: ${slideOutBlurredRight} 0.45s cubic-bezier(0.755, 0.05, 0.855, 0.06) both;
     }
     &.visible {
-        animation: ${flickerIn} 2s linear both;
+        animation: ${flickerIn} 1.5s linear both;
     }
     h1 {
         margin-bottom: 6px;
@@ -275,6 +276,10 @@ const CardBack = styled.div`
 
     span {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
+
+        & > :nth-child(2) {
+            margin: 0 5px;
+        }
     }
 `;

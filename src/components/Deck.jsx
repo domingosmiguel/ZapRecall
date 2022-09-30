@@ -7,13 +7,14 @@ import FlashCard from "./FlashCard";
 
 function Deck() {
     const { cards, setHeaderShadow, setFooterShadow } = useContext(StatesContext);
+
     function handleScroll(e) {
         if (e.currentTarget.scrollTop === 0) {
             setHeaderShadow(false);
             return;
         } else if (
-            e.currentTarget.scrollTop + e.currentTarget.clientHeight ===
-            e.currentTarget.scrollHeight
+            e.currentTarget.scrollTop + e.currentTarget.clientHeight >
+            e.currentTarget.scrollHeight - 15
         ) {
             setFooterShadow(false);
             return;
