@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import logo from "../assets/img/logo.png";
+import logo from "./img/logo.png";
 function WelcomePage() {
     return (
         <Home>
