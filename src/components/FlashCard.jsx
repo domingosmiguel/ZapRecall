@@ -19,6 +19,7 @@ function FlashCard({ card: { id: id, question: question, answer: answer } }) {
         coverDisplay,
         coverColor,
         coverDecoration,
+        coverClass,
         cardDisplay,
         iconDataIdentifier,
     } = setCardConfig(id, opened);
@@ -29,7 +30,12 @@ function FlashCard({ card: { id: id, question: question, answer: answer } }) {
             height={containerHeight}
             events={containerEvents}
         >
-            <CardCover display={coverDisplay} color={coverColor} textDecoration={coverDecoration}>
+            <CardCover
+                display={coverDisplay}
+                color={coverColor}
+                textDecoration={coverDecoration}
+                className={coverClass}
+            >
                 <h1 data-identifier="flashcard-index-item">Question {id + 1}</h1>
                 <SetIcon
                     color={coverColor}
@@ -81,7 +87,7 @@ const CardContainer = styled.li`
     align-items: center;
     margin: 25px 0px;
     transition: height 0.4s ease-in-out;
-
+    position: relative;
     &:first-child {
         margin-top: 0;
     }
@@ -94,9 +100,118 @@ const CardContainer = styled.li`
         cursor: pointer;
     }
 `;
+const slideOutBlurredRight = keyframes`
+    0% {
+      transform: translateX(0) scaleY(1) scaleX(1);
+      transform-origin: 50% 50%;
+      filter: blur(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(1000px) scaleX(2) scaleY(0.2);
+      transform-origin: 0% 50%;
+      filter: blur(40px);
+      opacity: 0;
+    }
+`;
+const flickerIn = keyframes`
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0;
+    }
+    10.1% {
+        opacity: 1;
+    }
+    10.2% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+    20.1% {
+        opacity: 1;
+    }
+    20.6% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0;
+    }
+    30.1% {
+        opacity: 1;
+    }
+    30.5% {
+        opacity: 1;
+    }
+    30.6% {
+        opacity: 0;
+    }
+    45% {
+        opacity: 0;
+    }
+    45.1% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    55% {
+        opacity: 1;
+    }
+    55.1% {
+        opacity: 0;
+    }
+    57% {
+        opacity: 0;
+    }
+    57.1% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    60.1% {
+        opacity: 0;
+    }
+    65% {
+        opacity: 0;
+    }
+    65.1% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    75.1% {
+        opacity: 0;
+    }
+    77% {
+        opacity: 0;
+    }
+    77.1% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
+    }
+    85.1% {
+        opacity: 0;
+    }
+    86% {
+        opacity: 0;
+    }
+    86.1% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+`;
 const CardCover = styled.div`
     background-color: white;
-    display: ${({ display }) => display};
+    display: flex;
     justify-content: space-between;
     align-items: center;
     font-weight: 700;
@@ -104,9 +219,15 @@ const CardCover = styled.div`
     text-decoration: ${({ textDecoration }) => textDecoration};
     box-shadow: 5px 5px 5px #e26060;
     height: 100%;
-
-    h1,
-    span {
+    position: absolute;
+    z-index: 1;
+    &.hidden {
+        animation: ${slideOutBlurredRight} 0.45s cubic-bezier(0.755, 0.05, 0.855, 0.06) both;
+    }
+    &.visible {
+        animation: ${flickerIn} 2s linear both;
+    }
+    h1 {
         margin-bottom: 6px;
     }
 `;

@@ -1,14 +1,14 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import styled from "styled-components";
 import StatesContext from "../assets/providers/cardStatesProvider";
 import SetIcon from "./SetIcon";
 
-function Footer() {
+function Footer({ footerShadow }) {
     const { opened, answerOrder } = useContext(StatesContext);
 
     const colors = ["var(--cor-nao-lembrei)", "var(--cor-quase-nao-lembrei)", "var(--cor-zap)"];
     return (
-        <ScoreBar progress={answerOrder.length}>
+        <ScoreBar progress={answerOrder.length} shadow={footerShadow}>
             <Progress data-identifier="flashcard-counter">
                 {answerOrder.length}/{opened.length} COMPLETED
             </Progress>
@@ -40,6 +40,7 @@ const ScoreBar = styled.section`
     text-align: center;
     display: flex;
     flex-direction: column;
+    box-shadow: ${({ shadow }) => (shadow ? "0 -5px 5px #33333330" : "")};
 `;
 const Progress = styled.div`
     line-height: 22px;

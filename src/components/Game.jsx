@@ -12,9 +12,23 @@ import Footer from "./Footer";
 function Game() {
     const [opened, setOpened] = useState(cards.map((card) => card.opened));
     const [flipped, setFlipped] = useState(cards.map((card) => card.flipped));
-    const [headerShadow, setHeaderShadow] = useState(false);
     const [answerOrder, setAnswerOrder] = useState([]);
+    const [headerShadow, setHeaderShadow] = useState(false);
+    const [footerShadow, setFooterShadow] = useState(true);
+
     function handleCoverClick(cardId) {
+        const otherCardOpened = opened.includes(true);
+        if (otherCardOpened) {
+            const otherCardFlipped = flipped[opened.indexOf(true)];
+            if (!otherCardFlipped) {
+                setOpened(
+                    opened.map((openedIndex, index) =>
+                        index === cardId || openedIndex === true ? !openedIndex : openedIndex
+                    )
+                );
+            }
+            return;
+        }
         setOpened(
             opened.map((openedIndex, index) => (index === cardId ? !openedIndex : openedIndex))
         );
@@ -25,8 +39,19 @@ function Game() {
         );
     }
     function handleButtonClick(btnNo, cardId, color) {
-        setOpened(opened.map((el, index) => (index === cardId ? color : opened[index])));
-        setFlipped(flipped.map((el, index) => (index === cardId ? btnNo : flipped[index])));
+        const newOpened = [];
+        const newFlipped = [];
+        for (let i = 0; i < cards.length; i++) {
+            if (i === cardId) {
+                newOpened.push(color);
+                newFlipped.push(btnNo);
+                continue;
+            }
+            newOpened.push(opened[i]);
+            newFlipped.push(flipped[i]);
+        }
+        setOpened(newOpened);
+        setFlipped(newFlipped);
         setAnswerOrder([...answerOrder, btnNo]);
     }
     return (
@@ -42,10 +67,11 @@ function Game() {
                     handleCardClick,
                     handleCoverClick,
                     setHeaderShadow,
+                    setFooterShadow,
                 }}
             >
                 <Deck />
-                <Footer />
+                <Footer footerShadow={footerShadow} />
             </StatesProvider>
         </Body>
     );

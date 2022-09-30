@@ -7,6 +7,7 @@ export default function setCardConfig(id, opened) {
             configs.coverDisplay = "none";
             configs.coverColor = "var(--preto)";
             configs.coverDecoration = "none";
+            configs.coverClass = "hidden";
             configs.cardDisplay = "";
             configs.iconDataIdentifier = "flashcard-show-btn";
             break;
@@ -16,6 +17,7 @@ export default function setCardConfig(id, opened) {
             configs.coverDisplay = "flex";
             configs.coverColor = "var(--preto)";
             configs.coverDecoration = "none";
+            configs.coverClass = "";
             configs.cardDisplay = "none";
             configs.iconDataIdentifier = "flashcard-show-btn";
             break;
@@ -25,6 +27,7 @@ export default function setCardConfig(id, opened) {
             configs.coverDisplay = "flex";
             configs.coverColor = `${opened[id]}`;
             configs.coverDecoration = "line-through";
+            configs.coverClass = "visible";
             configs.cardDisplay = "none";
             configs.iconDataIdentifier = "flashcard-status";
     }

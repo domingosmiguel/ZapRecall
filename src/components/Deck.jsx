@@ -6,12 +6,19 @@ import StatesContext from "../assets/providers/cardStatesProvider";
 import FlashCard from "./FlashCard";
 
 function Deck() {
-    const { cards, setHeaderShadow } = useContext(StatesContext);
+    const { cards, setHeaderShadow, setFooterShadow } = useContext(StatesContext);
     function handleScroll(e) {
         if (e.currentTarget.scrollTop === 0) {
             setHeaderShadow(false);
             return;
+        } else if (
+            e.currentTarget.scrollTop + e.currentTarget.clientHeight ===
+            e.currentTarget.scrollHeight
+        ) {
+            setFooterShadow(false);
+            return;
         }
+        setFooterShadow(true);
         setHeaderShadow(true);
     }
     return (
@@ -33,7 +40,6 @@ const Table = styled.section`
     overflow-y: scroll;
 `;
 const Main = styled.ul`
-    height: fit-content;
     width: fit-content;
     margin: 0 auto;
 `;
