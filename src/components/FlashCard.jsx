@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import StatesContext from "../assets/providers/cardStatesProvider";
+import StatesContext from "./providers/cardStatesProvider";
 import styled, { keyframes } from "styled-components";
 
 import Button from "./Button";
@@ -7,8 +7,8 @@ import SetIcon from "./SetIcon";
 
 import { ArrowUndoOutline } from "react-ionicons";
 
-import buttonsConfig from "../assets/data/buttonsConfig";
-import setCardConfig from "../assets/functions/setCardConfig";
+import buttonsConfig from "./data/buttonsConfig";
+import setCardConfig from "./functions/setCardConfig";
 
 function FlashCard({ card: { id: id, question: question, answer: answer } }) {
     const { opened, flipped, handleCardClick } = useContext(StatesContext);

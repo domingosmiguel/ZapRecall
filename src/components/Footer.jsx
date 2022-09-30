@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import StatesContext from "../assets/providers/cardStatesProvider";
+import StatesContext from "./providers/cardStatesProvider";
 import SetIcon from "./SetIcon";
 
 function Footer({ footerShadow }) {

@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { useState } from "react";
 
-import { StatesProvider } from "../assets/providers/cardStatesProvider";
+import { StatesProvider } from "./providers/cardStatesProvider";
 
-import cards from "../assets/data/cards";
+import cards from "./data/cards";
 
 import Header from "./Header";
 import Deck from "./Deck";

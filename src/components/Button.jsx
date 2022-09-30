@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import StatesContext from "../assets/providers/cardStatesProvider";
+import StatesContext from "./providers/cardStatesProvider";
 import styled from "styled-components";
 
 function Button({ btnNo, cardId, button: { color: color, text: text, identifier: identifier } }) {

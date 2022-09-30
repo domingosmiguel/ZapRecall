@@ -3,7 +3,7 @@ import { PlayOutline } from "react-ionicons";
 import { CloseCircle } from "react-ionicons";
 import { HelpCircle } from "react-ionicons";
 import { CheckmarkCircle } from "react-ionicons";
-import StatesContext from "../assets/providers/cardStatesProvider";
+import StatesContext from "./providers/cardStatesProvider";
 
 function SetIcon({ color, flipped, iconDataIdentifier, cardId }) {
     const { handleCoverClick } = useContext(StatesContext);

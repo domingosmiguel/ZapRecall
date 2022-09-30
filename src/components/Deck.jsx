@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import styled from "styled-components";
 
-import StatesContext from "../assets/providers/cardStatesProvider";
+import StatesContext from "./providers/cardStatesProvider";
 
 import FlashCard from "./FlashCard";
 
